@@ -1,0 +1,28 @@
+body {
+    font-family: "Nunito";
+}
+
+.article-hero {
+    height: 80vh;
+    background-image: url(../img/forum-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+}
+
+.post-preview {
+    padding: 30px 0;
+}
+
+.post-preview a {
+    text-decoration: none;
+}
+
+.post-preview h3 {
+    font-weight: bold;
+}
+
+.smaller-font {
+    font-size: .8rem;
+}
