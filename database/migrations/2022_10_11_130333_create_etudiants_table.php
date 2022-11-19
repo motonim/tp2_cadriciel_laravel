@@ -26,9 +26,6 @@ class CreateEtudiantsTable extends Migration
             $table->timestamps();
         });
 
-        // Schema::table('etudiants', function (Blueprint $table) {
-        //     $table->foreignId('ville_id')->constrained('villes');
-        // });
     }
 
     /**

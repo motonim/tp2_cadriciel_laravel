@@ -86,14 +86,6 @@
                         </div>
                      </div>
                   </div>
-                  <!-- <form method="post" enctype="multipart/form-data">
-                     @csrf
-                     @method('PUT')
-                     <div class="form-group mt-4">
-                     <input type="file" name="file" class="form-control" accept=".doc,.docx,.pdf,.zip">
-                     </div>
-                     <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">@lang('lang.text_save')</button>
-                  </form> -->
                   @endif
                </td>
                

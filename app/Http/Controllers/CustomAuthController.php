@@ -50,22 +50,6 @@ class CustomAuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        //email
-        // $to_name = $request->name;
-        // $to_email = $request->email;
-        // $body="<a href='route'>Cliquez ici pour confirmer votre compte</a>";
-
-        // Mail::send('auth.mail', $data =[
-        //     'name'=>$to_name,
-        //     'body' => $body
-        // ],function($message) use ($to_name, $to_email) {
-        //     $message->to($to_email, $to_name)->subject('Courriel de test de Laravel ');
-        // });
-            
-        // return redirect("login")->withSuccess('Message envoyé');
-
-        // return redirect('login');
-        // return redirect()->back()->withSuccess('User enregistré');
         return redirect(route('login'))->withSuccess('User enregistré');
     }
 
@@ -124,7 +108,7 @@ class CustomAuthController extends Controller
 
         if(!Auth::validate($credentials)) :
             return redirect('login')
-                ->withErrors(trans('auth.failed')); // if there is error, it will find the 'failed' line on resources/lang/auth.php
+                ->withErrors(trans('auth.failed')); 
         endif;
 
         $user = Auth::getProvider()->retrieveByCredentials($credentials);

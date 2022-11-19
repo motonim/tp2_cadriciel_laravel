@@ -52,27 +52,8 @@ class EtudiantController extends Controller
 
         $etudiantsUesrsId = Etudiant::pluck('id')->all();
         $users = User::whereNotIn('id', $etudiantsUesrsId)->select()->get();
-        // print_r($users->random()->id);
         $newId = $users->random()->id;
 
-        //   SELECT * FROM `users` LEFT JOIN `etudiants` on etudiants.users_id = users.id where users.id NOT IN (SELECT users_id FROM `etudiants`)
-
-
-        // print_r(User::all('name')->unique);
-
-        // $users = User::select()
-        //     ->leftJoin('etudiants', 'users.id', '!=', 'etudiants.users_id')
-        //     ->get();
-
-    //     $users = User::leftJoin('etudiants', 'etudiants.users_id', '=', 'users.id')
-    //   ->whereNotIn('book_price', [100,200])
-    //   ->get();
-
-       
-
-
-
-        // return $request;
         $nouvelEtudiant = Etudiant::create([
             'id' => $newId,
             'nom' => $request->nom,
@@ -82,9 +63,7 @@ class EtudiantController extends Controller
             'birthday' => $request->birthday,
             'ville_id' => $request->ville_id
         ]);
-        // return $newPost;
-        // return $nouvelEtudiant;
-        // die();
+   
         return redirect('etudiant/' . $newId);
     }
 

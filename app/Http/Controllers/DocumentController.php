@@ -96,10 +96,6 @@ class DocumentController extends Controller
      */
     public function update(Request $request, Document $document)
     {
-        // var_dump($request);
-        // echo "<br>";
-        // echo "<br>";
-        // var_dump($document);
 
         $request->validate([
             'file' => 'required'
@@ -136,8 +132,6 @@ class DocumentController extends Controller
     }
 
     public function download(Document $document){
-        // var_dump($document->title);
-        // die();
         $filepath = public_path('file/');
         return Response::download($filepath.$document->title);
 

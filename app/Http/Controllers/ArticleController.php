@@ -50,9 +50,7 @@ class ArticleController extends Controller
             'content' => $request->content,
             'author_id'=> $request->author_id
         ]);
-        // return $newPost;
-        // return $nouvelEtudiant;
-        // die();
+
         return redirect(route('article.index'))->withSuccess('Enregistré');
     }
 
@@ -63,11 +61,7 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
-    {
-        // var_dump(Auth::user()->name);
-        // if(Auth::use()->name == )
-        // var_dump($article->hasAuthor->name);
-        
+    {        
         return view('article.show', ['article' => $article]);
     }
 
